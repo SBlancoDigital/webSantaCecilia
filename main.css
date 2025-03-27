@@ -1,3 +1,4 @@
+/*Estilos GENERALES primero lo ponemos todo a 0, para luego empezar a jugar*/
 *{
     margin: 0;
     padding: 0;
@@ -6,12 +7,31 @@
 
 }
 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+:root {
+    /* PALETA DE COLORES */
+    --dark-primary-color: #689F38;
+    --light-primary-color: #DCEDC8;
+    --primary-color: #8BC34A;
+    --text-icons: #212121;
+    --accent-color: #795548;
+    --secondary-text: #757575;
+    --divider-color: #BDBDBD;
+}
+
 header{
 display: flex;
 align-items: center;
 justify-content: space-between;
 padding: 1rem;
-background-color: #bdee62;
+background-color: #689F38;
+color:#DCEDC8;
+font-size: medium ;
 }
 
 .logo{
@@ -27,12 +47,30 @@ background-color: #bdee62;
 .nav-list{
 list-style-type: none;
 display:flex;
-gap: 1rem;
+gap: 3rem;
 }
 
 .nav-list li a{ 
     text-decoration: none;
-    color: black;
+    color: #DCEDC8;
+}
+
+/* CONTENIDO LA FINCA*/
+.contenido {
+    display: flex; /* Activa Flexbox */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 1rem; /* Espacio entre la imagen y el texto */
+    padding: 1rem; /* Espaciado interno */
+}
+
+.contenido img {
+    width: 40%; /* La imagen ocupa el 40% del ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.contenido .texto {
+    width: 60%; /* El texto ocupa el 60% del ancho */
+    text-align: justify; /* Justifica el texto */
 }
 
 .video-section {
@@ -73,10 +111,10 @@ gap: 1rem;
     }
 
     .abrir-menu{
-        color: black;
+        color: #212121;
     }
     .cerrar-menu{
-        color: #ecba14;    
+        color: #212121;    
     
     }
     .nav{ 
@@ -91,9 +129,9 @@ gap: 1rem;
         top:0;
         right:0;
         bottom: 0;
-        background-color: #1e6808;
+        background-color: #689F38;
         padding: 2rem;
-        box-shadow: 0 0 0 100vmax   rgba(24, 65, 19, 0.5);
+    box-shadow: 0 0 0 100vmax   rgba(189, 189, 189, 0.493);
     }
      .nav.visible{
         opacity: 1;
@@ -105,7 +143,26 @@ gap: 1rem;
     }
     
     .nav-list li a{
-        color: #ecba14;    
+        color: #DCEDC8;    
     }
 
+}
+
+footer{
+    background-color: #689F38;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 2%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content:center;    
+    gap: 3rem;
+
+}  
+footer p{
+    margin: 0;
 }
