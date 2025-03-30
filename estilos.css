@@ -33,16 +33,15 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  
   background-color: #dcedc8;
+
   color: #689f38;
   font-size: medium;
 }
 
 .logo {
-  width: 20%;
-  height: auto;
-
+  max-width: 5rem;
+  border-radius: 50%;
 }
 .logo h1 {
   font-size: 1.5rem;
@@ -59,28 +58,13 @@ header {
   list-style-type: none;
   display: flex;
   gap: 2rem;
-  pading: 0;
-  justify-content: center;
 }
 
 .nav-list li a {
   text-decoration: none;
-  color: white;
-  background-color: var(--dark-primary-color);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border : 2px solid var(--dark-primary-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #689f38;
   font-size: 1rem;
   font-weight: bold;
-}
-
-
-.nav-list li a:hover {
-  background-color: transparent;
-  color: var(--dark-primary-color);
-  color: var(--text-icons)
-  border : 2px solid var(--dark-primary-color);
 }
 body {
   background-color: #dcedc8; /* Color de fondo */
@@ -96,37 +80,6 @@ h2 {
   gap: 1rem;
 }
 
-.inicio img {
-  display: cover; 
-  margin: 0 auto;
-  width: 100%; 
-  max-width: 800px; 
-  position: relative;
-  border-radius: 25px; /* Borde redondeado */
-  
-}
-
-.inicio {
-  position: relative;
-  text-align: center;
-  background: linear-gradient(to top, transparent, #fafafa); /* Degradado hacia el color del fondo */
-  padding-bottom: 20px;
-}
-
-.inicio h1 {
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--dark-primary-color);
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
-  z-index: 10; /* Asegura que el texto esté por encima de la imagen */
-}
-******************************* 
-******       PRODUCTOS     ***
-******************************
 
 .producto {
   display: flex;
