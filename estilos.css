@@ -33,16 +33,15 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  
-  background-color:#ffffff;/* #dcedc8;*/
+  background-color: #dcedc8;
+
   color: #689f38;
   font-size: medium;
 }
 
 .logo {
-  width: 20%;
-  height: auto;
-
+  max-width: 5rem;
+  border-radius: 50%;
 }
 .logo h1 {
   font-size: 1.5rem;
@@ -59,39 +58,20 @@ header {
   list-style-type: none;
   display: flex;
   gap: 2rem;
-  pading: 0;
-  justify-content: center;
 }
 
 .nav-list li a {
   text-decoration: none;
-  color: white;
-  background-color: var(--dark-primary-color);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border : 2px solid var(--dark-primary-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #689f38;
   font-size: 1rem;
   font-weight: bold;
 }
-
-
-.nav-list li a:hover {
-  background-color: transparent;
-  color: var(--dark-primary-color);
-  color: var(--text-icons)
-  border : 2px solid var(--dark-primary-color);
-}
 body {
-    color: #212121; /* Color del texto */
-    font-size: 1rem; /* Tamaño de fuente por defecto */
-    line-height: 1.5; /* Espaciado entre líneas */
-    
-    background-image: url('img/logo.png');
-    background: linear-gradient(to bottom, #ffffff, #8bc34a);
-    z-index: -1;
-  }
-   
+  background-color:#fafafa /* #dcedc8; Color de fondo */
+  color: #212121; /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente por defecto */
+  line-height: 1.5; /* Espaciado entre líneas */
+}
 h2 {
   text-align: center;
   color: var(--dark-primary-color);
@@ -100,50 +80,6 @@ h2 {
   gap: 1rem;
 }
 
-.inicio img {
-  display: block; 
-  margin: 0 auto;
-  width: 100%; 
-  max-width: 800px; 
-  position: relative;
-  border-radius: 25px; /* Borde redondeado */
-  
-}
-
-.inicio {
-  position: relative;
-  text-align: center;
-  background: linear-gradient(to top, transparent, #fafafa); /* Degradado hacia el color del fondo */
-  padding-bottom: 20px;
-}
-
-.inicio h1 {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--dark-primary-color);
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
-  z-index: 10; /* Asegura que el texto esté por encima de la imagen */
-}
-
-.inicio p{
-  color:  #000000; /* Color verde */
-  font-size: 2rem; /* Letra grande */
-  line-height: 1.5; /* Espaciado entre líneas */
-  margin: 20px auto; /* Márgenes amplios arriba y abajo */
-  max-width: 1200px; /* Limita el ancho para que haya márgenes en los lados */
-  text-align: center; /* Centra el texto */
-
-}
-.inicio p:last-of-type{
-  color: #f8f8f8;
-}
-******************************* 
-******       PRODUCTOS     ***
-******************************
 
 .producto {
   display: flex;
