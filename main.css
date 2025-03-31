@@ -34,7 +34,11 @@ header {
   justify-content: space-between;
   padding: 1rem;
   
+<<<<<<< HEAD
   background-color:#ffffff;/* #dcedc8;*/
+=======
+  background-color: #dcedc8;
+>>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
   color: #689f38;
   font-size: medium;
 }
@@ -83,6 +87,7 @@ header {
   border : 2px solid var(--dark-primary-color);
 }
 body {
+<<<<<<< HEAD
     color: #212121; /* Color del texto */
     font-size: 1rem; /* Tamaño de fuente por defecto */
     line-height: 1.5; /* Espaciado entre líneas */
@@ -92,6 +97,13 @@ body {
     z-index: -1;
   }
    
+=======
+  background-color: #dcedc8; /* Color de fondo */
+  color: #212121; /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente por defecto */
+  line-height: 1.5; /* Espaciado entre líneas */
+}
+>>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
 h2 {
   text-align: center;
   color: var(--dark-primary-color);
@@ -101,7 +113,11 @@ h2 {
 }
 
 .inicio img {
+<<<<<<< HEAD
   display: block; 
+=======
+  display: cover; 
+>>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
   margin: 0 auto;
   width: 100%; 
   max-width: 800px; 
@@ -119,7 +135,11 @@ h2 {
 
 .inicio h1 {
   position: absolute;
+<<<<<<< HEAD
   top: 5%;
+=======
+  top: 7%;
+>>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--dark-primary-color);
@@ -128,6 +148,7 @@ h2 {
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
   z-index: 10; /* Asegura que el texto esté por encima de la imagen */
 }
+<<<<<<< HEAD
 
 .inicio p{
   color:  #000000; /* Color verde */
@@ -141,6 +162,8 @@ h2 {
 .inicio p:last-of-type{
   color: #f8f8f8;
 }
+=======
+>>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
 ******************************* 
 ******       PRODUCTOS     ***
 ******************************

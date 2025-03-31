@@ -67,7 +67,11 @@ header {
   font-weight: bold;
 }
 body {
+<<<<<<< HEAD
   background-color:#fafafa /* #dcedc8; Color de fondo */
+=======
+  background-color: #dcedc8; /* Color de fondo */
+>>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
   color: #212121; /* Color del texto */
   font-size: 1rem; /* Tamaño de fuente por defecto */
   line-height: 1.5; /* Espaciado entre líneas */
