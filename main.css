@@ -33,12 +33,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  
-<<<<<<< HEAD
-  background-color:#ffffff;/* #dcedc8;*/
-=======
-  background-color: #dcedc8;
->>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
+  background-color:#ffffff;
   color: #689f38;
   font-size: medium;
 }
@@ -63,7 +58,7 @@ header {
   list-style-type: none;
   display: flex;
   gap: 2rem;
-  pading: 0;
+  padding: 0;
   justify-content: center;
 }
 
@@ -79,31 +74,22 @@ header {
   font-weight: bold;
 }
 
-
 .nav-list li a:hover {
   background-color: transparent;
-  color: var(--dark-primary-color);
-  color: var(--text-icons)
-  border : 2px solid var(--dark-primary-color);
+  color: var(--text-icons); /* Punto y coma añadido */
+  border: 2px solid var(--dark-primary-color);
 }
-body {
-<<<<<<< HEAD
+
+body{
     color: #212121; /* Color del texto */
     font-size: 1rem; /* Tamaño de fuente por defecto */
     line-height: 1.5; /* Espaciado entre líneas */
     
     background-image: url('img/logo.png');
-    background: linear-gradient(to bottom, #ffffff, #8bc34a);
+    background: linear-gradient(to bottom, #ffffff, var(--dark-primary-color));
     z-index: -1;
   }
    
-=======
-  background-color: #dcedc8; /* Color de fondo */
-  color: #212121; /* Color del texto */
-  font-size: 1rem; /* Tamaño de fuente por defecto */
-  line-height: 1.5; /* Espaciado entre líneas */
-}
->>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
 h2 {
   text-align: center;
   color: var(--dark-primary-color);
@@ -113,14 +99,10 @@ h2 {
 }
 
 .inicio img {
-<<<<<<< HEAD
   display: block; 
-=======
-  display: cover; 
->>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
   margin: 0 auto;
   width: 100%; 
-  max-width: 800px; 
+  max-width: 1100px; 
   position: relative;
   border-radius: 25px; /* Borde redondeado */
   
@@ -135,24 +117,19 @@ h2 {
 
 .inicio h1 {
   position: absolute;
-<<<<<<< HEAD
   top: 5%;
-=======
-  top: 7%;
->>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centra el texto */
   color: var(--dark-primary-color);
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
   z-index: 10; /* Asegura que el texto esté por encima de la imagen */
 }
-<<<<<<< HEAD
 
 .inicio p{
   color:  #000000; /* Color verde */
-  font-size: 2rem; /* Letra grande */
+  font-size: 1.5rem; /* Letra grande */
   line-height: 1.5; /* Espaciado entre líneas */
   margin: 20px auto; /* Márgenes amplios arriba y abajo */
   max-width: 1200px; /* Limita el ancho para que haya márgenes en los lados */
@@ -162,8 +139,6 @@ h2 {
 .inicio p:last-of-type{
   color: #f8f8f8;
 }
-=======
->>>>>>> f59eb3c0e28716d2662d3387463919b12dcb013c
 ******************************* 
 ******       PRODUCTOS     ***
 ******************************
@@ -263,7 +238,7 @@ h2 {
 
 /* FOOTER */
 footer {
-  background-color: #689f38;
+  background-color: var(--dark-primary-color);
   color: white;
   text-align: center;
   padding: 10px;
@@ -294,20 +269,30 @@ main{
   grid-template-rows: 1fr 1fr;
 }
 
-
-.contenido{
-  display: flex;
-}
-.contenido p,h3{
- padding: 10px;
+.contenido {
+  display: flex; /* Activa Flexbox para alinear elementos en fila */
+  gap: 2rem; /* Espacio entre la imagen y el texto */
+  padding: 1rem; /* Espaciado interno */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  align-items: center; /* Alinea verticalmente los elementos */
 }
 
 .contenido img {
-  padding: 10px;
-  width: 50%;
+  width: 50%; /* La imagen ocupa la mitad del ancho */
   height: auto; /* Mantiene la proporción de la imagen */
   border-radius: 10px; /* Borde redondeado */
-  min-width: 100px;
+}
+
+.contenido p {
+  width: 50%; /* El texto ocupa la otra mitad del ancho */
+  text-align: justify; /* Justifica el texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  line-height: 1.5; /* Espaciado entre líneas */
+  background-color: var(--accent-color);
+  border-radius: 1;
+  margin:1rem 0; 
+  color:white;
   
 }
 
@@ -347,6 +332,7 @@ height: 100%;
 .contenedor-formulario {
  position: relative;
   width: 100%;
+ 
   min-height: 100vh;
   padding: 2rem;
   background-color: #fafafa;
@@ -378,6 +364,12 @@ box-sizing: border-box;
   background: linear-gradient(to bottom, #4a2c2c, rgba(250, 250, 250, 0)); /* De oscuro (#4a2c2c) hacia transparente */
 position: relative;
 }
+.forma-contacto p {
+  color: var(--light-primary-color);
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
 
 .form{
@@ -389,9 +381,9 @@ position: relative;
 
 
 .title{
-  color:#7482cc;
+  color: var(--accent-color);
   font-weight: 500  ;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1;
   margin-bottom: 0.7rem;
 }
@@ -411,16 +403,16 @@ label{
   bottom: 20px solid;
   background: none;
   padding: 0.6rem 1.2rem;
-  color:#f40404;
+  color:var(--accent-color);
   font-weight: 500;
-  font-size: 0.95rem;  
+  font-size: 1.2rem;  
   letter-spacing: 0.5px;
   border-radius: 25px;
   transition:0.3s;
 }
 
 textarea.input{
-padding: 0.08rem 1.2rem;
+padding: 1rem 1.2rem;
 min-height: 150px;
 border-radius: 22px;
 resize: none;
@@ -433,8 +425,8 @@ overflow-y: auto;
   left: 15px;
   transform: translateY(-50%);
   padding: 0 0.4rem;
-  color: #359c6c;
-  font-size: 0.9rem;
+  color: var(--dark-primary-color);
+  font-size: 1.2rem;
   font-weight: 400;
   pointer-events: none;
   z-index: 1000;
@@ -450,7 +442,7 @@ overflow-y: auto;
   padding: 0.6rem 1.3rem;
   background-color: #795548;
   border: 2px solid #795548;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: ffff;
   line-height: 1 ;
   border-radius: 25px;
@@ -473,8 +465,8 @@ overflow-y: auto;
   top: 0;
   left: 25px;
   transform: translateY(-50%);
-  font-size: 0.8rem;
-  padding: 0 0.4rem;
+  font-size: 1.2rem;
+  padding: 24 4rem; /* Espacio entre el texto y el borde */
   /*color: transparent;*/
   pointer-events: none;
   z-index: 500;
@@ -506,7 +498,7 @@ overflow-y: auto;
   top: 0;
   transform: translateY(-50%);
   left: 25px;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .input-container.focus span:before,
