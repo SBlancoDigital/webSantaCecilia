@@ -162,6 +162,37 @@ h2 {
   transition: transform 0.3s ease-in-out;
 }
 
+.grid-productos {
+  display: grid; /* Activa CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el número de columnas automáticamente */
+  gap: 2rem; /* Espacio entre los elementos */
+  padding: 2rem; /* Espaciado interno */
+  justify-items: center; /* Centra los elementos horizontalmente */
+}
+
+.grid-productos .item {
+  text-align: center; /* Centra el texto debajo de las imágenes */
+
+}
+
+.grid-productos img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+
+  max-width:400px; /* Limita el tamaño máximo de las imágenes */
+  height: auto; /* Mantiene la proporción de las imágenes */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.grid-productos h3 {
+  margin-top: 0.5rem; /* Espaciado entre la imagen y el título */
+  font-size: 1.2rem; /* Tamaño del texto */
+  color: var(--dark-primary-color); /* Color del texto */
+}
+
+                  ******************************
+                  ******      REVISAR        ***
+                  ******************************
+
 @media screen and (max-width: 768px) {
   .abrir-menu,
   .cerrar-menu {
@@ -235,8 +266,10 @@ h2 {
   }
 }
 
+********************************
+*****    FOOTER  ***************
+********************************
 
-/* FOOTER */
 footer {
   background-color: var(--dark-primary-color);
   color: white;
