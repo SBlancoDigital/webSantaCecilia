@@ -11,7 +11,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
   font-size: 20px;
 }
 :root {
@@ -173,6 +172,152 @@ h2 {
 }
 .inicio p:last-of-type {
   color: var(--text-buttons);
+}
+
+
+
+/*  ******************
+** inicio tablet ****
+********************** */
+@media screen and (max-width: 768px) {
+  /* Header */
+header {
+  flex-direction: column; /* Cambia el diseño a columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  padding: 1rem;
+}
+
+header .logo {
+  width: 80%; /* Ajusta el tamaño del logo */
+  margin-bottom: 1rem;
+}
+
+.abrir-menu {
+  display: block; /* Muestra el botón de hamburguesa */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100; /* Encima del nav */
+}
+
+.cerrar-menu {
+  display: block; /* Muestra el botón de cerrar */
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100; /* Encima del nav */
+}
+
+/* Nav */
+.nav {
+  position: fixed; /* Fija el nav en la pantalla */
+  top: 0;
+  right: 0; /* Alinea el nav al lado derecho */
+  width: 30%; /* Ocupa el 30% del ancho de la pantalla */
+  height: 100%; /* Ocupa toda la altura de la pantalla */
+  background-color: #ffffff; /* Fondo blanco */
+  opacity: 0; /* Oculto inicialmente */
+  visibility: hidden; /* Oculto inicialmente */
+  z-index: 1000; /* Se coloca encima de todo */
+  display: flex;
+  flex-direction: column; /* Los enlaces se apilan verticalmente */
+  align-items: center; /* Centra los enlaces horizontalmente */
+  justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
+  gap: 1rem; /* Espaciado entre los enlaces */
+  padding: 2rem 1rem; /* Espaciado interno */
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  transform: translateX(100%); /* Oculta el nav fuera de la pantalla inicialmente */
+  transition: transform 0.3s ease; /* Transición suave al abrir/cerrar */
+}
+
+.nav.visible {
+  transform: translateX(0); /* Muestra el nav */
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-list {
+  flex-direction: column; /* Los enlaces se apilan verticalmente */
+  gap: 1rem; /* Espaciado entre los enlaces */
+}
+
+.nav-list li a {
+  font-size: 1.2rem; /* Ajusta el tamaño del texto */
+  color: var(--text-icons); /* Texto oscuro */
+  background-color: transparent; /* Fondo transparente */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Sección Principal */
+.inicio {
+  padding: 1rem;
+  text-align: center;
+}
+.inicio h1 {
+  visibility: hidden; /* Hace que el elemento sea invisible */
+}
+.inicio img {
+  width: 100%; /* La imagen ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción */
+  margin-bottom: 1rem;
+}
+
+.inicio p {
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  font-size: 0.9rem; /* Reduce el tamaño del texto */
+}
+}
+
+/*  ******************
+** inicio movil ****
+********************** */
+@media screen and (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 0.5rem;
+  }
+
+  header .logo {
+    width: 90%; /* Reduce aún más el tamaño del logo */
+  }
+
+  .nav-list li a {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    padding: 0.5rem;
+  }
+
+  /* Sección principal */
+  .inicio h1 {
+visibility: hidden;
+
+  }
+
+  .inicio p {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.8rem; /* Reduce el tamaño del texto */
+    text-align: center;
+  }
 }
 
 *****************************
