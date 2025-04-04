@@ -1,6 +1,4 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /*Estilos GENERALES primero lo ponemos todo a 0, para luego empezar a jugar*/
 * {
@@ -11,21 +9,21 @@
 }
 
 body {
-
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
 }
 :root {
   /* PALETA DE COLORES */
-  --dark-primary-color: #689f38;
-  --light-primary-color: #dcedc8;
-  --primary-color: #8bc34a;
+  --primary-color: #467642;
+  --secundary-color: #16425b;
+  --bakground-color: #dcff66;
+  --background-color-opacidad-06: rgba(220, 255, 102, 0.4);
+  --surface-color: #6e8898;
+  --accent-color-buttons: #2e5266;
   --text-icons: #212121;
-  --accent-color: #795548;
-  --secondary-text: #757575;
-  --divider-color: #bdbdbd;
+  --text-buttons: #ffffff;
 }
 
 header {
@@ -33,7 +31,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color:#ffffff;
+  background-color: #ffffff;
   color: #689f38;
   font-size: medium;
 }
@@ -41,14 +39,12 @@ header {
 .logo {
   width: 20%;
   height: auto;
-
 }
-.logo h1 {
-  font-size: 1.5rem;
-  color: #689f38;
-  margin-left: 1rem;
+.logo img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Borde redondeado */
 }
-
 .abrir-menu,
 .cerrar-menu {
   display: none;
@@ -64,11 +60,11 @@ header {
 
 .nav-list li a {
   text-decoration: none;
-  color: white;
-  background-color: var(--dark-primary-color);
+  color: var(--text-buttons);
+  background-color: var(--accent-color-buttons);
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  border : 2px solid var(--dark-primary-color);
+  border: 2px solid var(--dark-primary-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1rem;
   font-weight: bold;
@@ -77,19 +73,21 @@ header {
 .nav-list li a:hover {
   background-color: transparent;
   color: var(--text-icons); /* Punto y coma añadido */
-  border: 2px solid var(--dark-primary-color);
+  border: 2px solid var(--accent-color-buttons); /* Cambia el color del borde al pasar el ratón */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body{
-    color: #212121; /* Color del texto */
-    font-size: 1rem; /* Tamaño de fuente por defecto */
-    line-height: 1.5; /* Espaciado entre líneas */
-    
-    background-image: url('img/logo.png');
-    background: linear-gradient(to bottom, #ffffff, var(--dark-primary-color));
-    z-index: -1;
-  }
-   
+body {
+  color: var(--text-icons); /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente por defecto */
+  line-height: 1.5; /* Espaciado entre líneas */
+  height: 100vh; /* Altura del viewport */
+  background: linear-gradient(to bottom, #ffffff, var(--surface-color));
+  background-repeat: cover;
+  background-attachment: fixed; /* Fija el fondo al desplazarse */
+  z-index: -1;
+}
+
 h2 {
   text-align: center;
   color: var(--dark-primary-color);
@@ -98,52 +96,160 @@ h2 {
   gap: 1rem;
 }
 
-.inicio img {
-  display: block; 
-  margin: 0 auto;
-  width: 100%; 
-  max-width: 1100px; 
-  position: relative;
-  border-radius: 25px; /* Borde redondeado */
-  
+********************************
+  *****
+  FOOTER
+  ***************
+  ********************************
+  footer {
+  background-color: var(--dark-primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 2%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3%;
+}
+footer p {
+  margin: 0;
 }
 
-.inicio {
+***************************
+  ******
+  INICIO
+  ***
+  ***************************
+  .inicio {
   position: relative;
   text-align: center;
-  background: linear-gradient(to top, transparent, #fafafa); /* Degradado hacia el color del fondo */
+  background: linear-gradient(
+    to top,
+    transparent,
+    #fafafa
+  ); /* Degradado hacia el color del fondo */
   padding-bottom: 20px;
+}
+
+.inicio img {
+  display: block;
+  margin: 2rem auto; /* Centra la imagen */
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  border-radius: 25px; /* Borde redondeado */
 }
 
 .inicio h1 {
   position: absolute;
-  top: 5%;
+  top: 12rem;
   left: 50%;
   transform: translate(-50%, -50%); /* Centra el texto */
-  color: var(--dark-primary-color);
+  color: var(--primary-color);
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
   z-index: 10; /* Asegura que el texto esté por encima de la imagen */
 }
 
-.inicio p{
-  color:  #000000; /* Color verde */
-  font-size: 1.5rem; /* Letra grande */
+.inicio p {
+  color: var(--text-icons);
+  font-size: 1.3rem; /* Letra grande */
   line-height: 1.5; /* Espaciado entre líneas */
   margin: 20px auto; /* Márgenes amplios arriba y abajo */
   max-width: 1200px; /* Limita el ancho para que haya márgenes en los lados */
   text-align: center; /* Centra el texto */
-
 }
-.inicio p:last-of-type{
-  color: #f8f8f8;
+.inicio p:last-of-type {
+  color: var(--text-buttons);
 }
-******************************* 
-******       PRODUCTOS     ***
-******************************
 
-.producto {
+*****************************
+  ******
+  LA
+  FINCA
+  ***
+  *****************************
+  main {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: var(--background-color-opacidad-06);
+}
+section h3 {
+  text-align: center;
+  color: var(--dark-primary-color);
+  font-size: 2rem;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.contenido {
+  display: flex; /* Activa Flexbox para organizar los elementos en fila */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: center; /* Espacia los elementos horizontalmente */
+  background-color: var(--primary-color);
+  padding: 2rem; /* Espaciado interno */
+  gap: 2rem; /* Espacio entre la imagen y el texto */
+  color: white; /* Color del texto */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 2rem auto; /* Espaciado externo y centra horizontalmente */
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+}
+
+.contenido img {
+  width: 50%; /* La imagen ocupa la mitad del ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.contenido img:last-child {
+  width: 30%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10;
+}
+.contenido p {
+  width: 50%; /* El texto ocupa la otra mitad del ancho */
+  text-align: justify; /* Justifica el texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  line-height: 1.5; /* Espaciado entre líneas */
+  border-radius: 1;
+  margin: 1rem 0;
+  color: white;
+}
+
+.video {
+  display: flex; /* Activa Flexbox para organizar los elementos en fila */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  background-color: var(--primary-color); /* Fondo del contenedor */
+  padding: 2rem; /* Espaciado interno */
+  gap: 2rem; /* Espacio entre el párrafo y el vídeo */
+  color: white; /* Color del texto */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 2rem auto; /* Espaciado externo y centra horizontalmente */
+  max-width: 1800px; /* Limita el ancho máximo del contenedor */
+}
+
+.video p {
+  width: 40%; /* El párrafo ocupa la otra mitad del ancho */
+  text-align: justify; /* Justifica el texto */
+  font-size: 1rem; /* Tamaño del texto */
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin: 0; /* Elimina márgenes adicionales */
+}
+
+*******************************
+  ******
+  PRODUCTOS
+  ***
+  ******************************
+  .producto {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -164,7 +270,10 @@ h2 {
 
 .grid-productos {
   display: grid; /* Activa CSS Grid */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el número de columnas automáticamente */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Ajusta el número de columnas automáticamente */
   gap: 2rem; /* Espacio entre los elementos */
   padding: 2rem; /* Espaciado interno */
   justify-items: center; /* Centra los elementos horizontalmente */
@@ -172,13 +281,12 @@ h2 {
 
 .grid-productos .item {
   text-align: center; /* Centra el texto debajo de las imágenes */
-
 }
 
 .grid-productos img {
   width: 100%; /* La imagen ocupa todo el ancho del contenedor */
 
-  max-width:400px; /* Limita el tamaño máximo de las imágenes */
+  max-width: 400px; /* Limita el tamaño máximo de las imágenes */
   height: auto; /* Mantiene la proporción de las imágenes */
   border-radius: 10px; /* Bordes redondeados */
 }
@@ -189,11 +297,11 @@ h2 {
   color: var(--dark-primary-color); /* Color del texto */
 }
 
-                  ******************************
-                  ******      REVISAR        ***
-                  ******************************
-
-@media screen and (max-width: 768px) {
+/* ******************************
+   ****** REVISAR ******
+   ****************************** */
+   
+  @media screen and (max-width: 768px) {
   .abrir-menu,
   .cerrar-menu {
     display: block;
@@ -203,19 +311,12 @@ h2 {
     cursor: pointer;
   }
 
-  .abrir-menu {
-    color: #212121;
-  }
-  .cerrar-menu {
-    color: #212121;
-  }
   .nav {
-    /*display: none;*/
     opacity: 0;
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
     gap: 1rem;
     position: absolute;
     top: 0;
@@ -225,147 +326,47 @@ h2 {
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(189, 189, 189, 0.493);
   }
+
   .nav.visible {
     opacity: 1;
     visibility: visible;
   }
+
   .nav-list {
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
   }
 
   .nav-list li a {
     color: #dcedc8;
   }
 
-.contenido {
-    display: flex; /* Activa Flexbox */
-  gap: 1rem; /* Espacio entre la imagen y el texto */
-  padding: 1rem; /* Espaciado interno */
-  flex-direction: column;
-  align-items: center;
+  .contenido {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 1rem; /* Espacio entre los elementos */
   }
 
-.contenido img {
-  width: 100%; /* La imagen ocupa el 100% del ancho */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 10px; /* Borde redondeado */
+  .contenido img {
+    width: 100%; /* La imagen ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
   }
-.contenido h3 {
-  /*aquí he de hacer un grip y colocar h3 que ocupe una linea y luego que empiece la explicación*/
 
-  text-align: center;
-  color: #689f38;
-  font-size: 1.5rem;
-  margin: 1rem;
-  }
-.contenido .texto {
-  width: 90%; /* El texto ocupa el 60% del ancho */
-  text-align: justify; /* Justifica el texto */
-  font-size: small;
+  .contenido p {
+    width: 90%; /* El texto ocupa el 90% del ancho */
+    text-align: justify; /* Justifica el texto */
   }
 }
 
-********************************
-*****    FOOTER  ***************
-********************************
-
-footer {
-  background-color: var(--dark-primary-color);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin-top: 2%;
-  position: fixed;
-  bottom: 0;
+*****************************
+  ******
+  CONTACTO
+  ***
+  *****************************
+  .contenedor-formulario {
+  position: relative;
   width: 100%;
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 3%;
-}
-footer p {
-  margin: 0;
 
-}
-
-
-*****************************
-******       LA FINCA     ***
-*****************************
-
-/* CONTENIDO LA FINCA*/
-main{
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-.contenido {
-  display: flex; /* Activa Flexbox para alinear elementos en fila */
-  gap: 2rem; /* Espacio entre la imagen y el texto */
-  padding: 1rem; /* Espaciado interno */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  max-width: 1200px; /* Limita el ancho máximo del contenedor */
-  align-items: center; /* Alinea verticalmente los elementos */
-}
-
-.contenido img {
-  width: 50%; /* La imagen ocupa la mitad del ancho */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 10px; /* Borde redondeado */
-}
-
-.contenido p {
-  width: 50%; /* El texto ocupa la otra mitad del ancho */
-  text-align: justify; /* Justifica el texto */
-  font-size: 1rem; /* Tamaño de fuente */
-  line-height: 1.5; /* Espaciado entre líneas */
-  background-color: var(--accent-color);
-  border-radius: 1;
-  margin:1rem 0; 
-  color:white;
-  
-}
-
-
-.video-section {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 1rem;
-padding: 2rem;
-}
-
-.video-section .text,
-.video-section .video {
-flex: 1;
-}
-
-.video-section .text {
-padding-right: 1rem;
-}
-
-.video-section .video {
-display: flex;
-justify-content: center;
-}
-
-.video-section iframe {
-width: auto;
-
-height: 100%;
-}
-
-*****************************
-******     CONTACTO       ***
-*****************************
-
-.contenedor-formulario {
- position: relative;
-  width: 100%;
- 
   min-height: 100vh;
   padding: 2rem;
   background-color: #fafafa;
@@ -373,29 +374,32 @@ height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-box-sizing: border-box;
-}   
+  box-sizing: border-box;
+}
 
-
-.forma{
-  margin: 0  auto;
+.forma {
+  margin: 0 auto;
   width: 60%;
   max-width: 820px;
   background-color: #e5c573;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 20px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-   overflow: hidden;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 2fr; /* Dos columnas: una más pequeña para .info-contacto y .forma-contacto */
   column-gap: 20px; /* Espacio entre columnas */
 }
 
 .forma-contacto {
-  grid-column: 1; 
-  background: linear-gradient(to bottom, #4a2c2c, rgba(250, 250, 250, 0)); /* De oscuro (#4a2c2c) hacia transparente */
-position: relative;
+  grid-column: 1;
+  background: linear-gradient(
+    to bottom,
+    #4a2c2c,
+    rgba(250, 250, 250, 0)
+  ); /* De oscuro (#4a2c2c) hacia transparente */
+  position: relative;
 }
 .forma-contacto p {
   color: var(--light-primary-color);
@@ -404,56 +408,54 @@ position: relative;
   text-align: center;
 }
 
-
-.form{
+.form {
   padding: 2.3rem 2.2rem;
   z-index: 10;
   overflow: hidden;
   position: relative;
 }
 
-
-.title{
+.title {
   color: var(--accent-color);
-  font-weight: 500  ;
+  font-weight: 500;
   font-size: 2rem;
   line-height: 1;
   margin-bottom: 0.7rem;
 }
 
-.input-container{
+.input-container {
   position: relative;
   margin: 1rem 0;
 }
 
-label{
-  display:none;
+label {
+  display: none;
 }
 
-.input{
+.input {
   width: 100%;
   outline: none;
   bottom: 20px solid;
   background: none;
   padding: 0.6rem 1.2rem;
-  color:var(--accent-color);
+  color: var(--accent-color);
   font-weight: 500;
-  font-size: 1.2rem;  
+  font-size: 1.2rem;
   letter-spacing: 0.5px;
   border-radius: 25px;
-  transition:0.3s;
+  transition: 0.3s;
 }
 
-textarea.input{
-padding: 1rem 1.2rem;
-min-height: 150px;
-border-radius: 22px;
-resize: none;
-overflow-y: auto;
+textarea.input {
+  padding: 1rem 1.2rem;
+  min-height: 150px;
+  border-radius: 22px;
+  resize: none;
+  overflow-y: auto;
 }
 
-.input-container label{
-  position:absolute;
+.input-container label {
+  position: absolute;
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
@@ -466,34 +468,34 @@ overflow-y: auto;
   transition: 0.5s;
 }
 
-.input-container.texarea label{
+.input-container.texarea label {
   top: 1rem;
   transform: translateY(0);
 }
 
-.btn{
+.btn {
   padding: 0.6rem 1.3rem;
   background-color: #795548;
   border: 2px solid #795548;
   font-size: 1.2rem;
   color: ffff;
-  line-height: 1 ;
+  line-height: 1;
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: transparent;
   color: #795548;
   border: 2px solid #795548;
 }
 
-#mensaje-enviado{
+#mensaje-enviado {
   font-size: 1.2rem;
 }
 
-.input-container span{
+.input-container span {
   position: absolute;
   top: 0;
   left: 25px;
@@ -503,12 +505,12 @@ overflow-y: auto;
   /*color: transparent;*/
   pointer-events: none;
   z-index: 500;
-  background-color:#e5c573;
+  background-color: #e5c573;
 }
 
-.input-container span:before, 
-.input-container span:after{
-  content:"";
+.input-container span:before,
+.input-container span:after {
+  content: "";
   position: absolute;
   width: 50%;
   opacity: 0.5;
@@ -516,18 +518,18 @@ overflow-y: auto;
   height: 5px;
   /*background-color: #ec1ca3; /* el color del fondo*/
   top: 50%;
-  transform: translateY(-50%); ;
+  transform: translateY(-50%);
 }
 
-.input-container span:before{
-  left: 50%; ;
+.input-container span:before {
+  left: 50%;
 }
 
-.input-container span:after{
+.input-container span:after {
   right: 50%;
 }
 
-.input-container.focus label{
+.input-container.focus label {
   top: 0;
   transform: translateY(-50%);
   left: 25px;
@@ -535,26 +537,24 @@ overflow-y: auto;
 }
 
 .input-container.focus span:before,
-.input-container.focus span:after{
-  width:50%;
+.input-container.focus span:after {
+  width: 50%;
 }
 
-
-
 ***************************
-******   LOCALIZACIÓN   ***
-***************************
-
-.mapa,
-.direcion{
+  ******
+  LOCALIZACIÓN
+  ***
+  ***************************
+  .mapa,
+.direcion {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  
 }
-.direcion p{
+.direcion p {
   display: inline;
 }
 
@@ -564,20 +564,18 @@ overflow-y: auto;
   justify-content: space-between; /* Espacia los elementos a lo largo del contenedor */
   gap: 20px; /* Espacio entre los elementos */
   margin: 20px; /* Espaciado general */
-  margin-left: 10rem; 
-  margin-right: 10rem; 
-  margin-bottom: 5rem; 
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 5rem;
 }
 
 .texto {
   flex: 1; /* Ocupa todo el espacio que pueda */
- 
 }
 .texto h3 {
   text-align: left;
   color: #689f38;
   font-size: 1.5rem;
-  
 }
 .mapa {
   flex: 1; /* Ocupa la misma proporción que el texto */

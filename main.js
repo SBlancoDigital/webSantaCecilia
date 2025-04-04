@@ -8,3 +8,17 @@ abrir.addEventListener('click', () => {
 cerrar.addEventListener('click', () => {
     nav.classList.remove("visible");
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const videoFrame = document.querySelector(".video-frame");
+
+    if (videoFrame) {
+        videoFrame.addEventListener("click", () => {
+            videoFrame.classList.toggle("fullscreen"); // Alterna la clase fullscreen
+        });
+    } else {
+        console.error("No se encontró ningún elemento con la clase .video-frame");
+    }
+});
