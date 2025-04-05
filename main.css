@@ -31,11 +31,12 @@ header {
   justify-content: space-between;
   padding: 1rem;
   background-color: #ffffff;
-  color: #689f38;
+  
   font-size: medium;
   border-bottom: 3px solid var(--accent-color-buttons); /* Línea decorativa en la parte inferior */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-}
+
+  }
 
 .logo {
   width: 20%;
@@ -97,6 +98,14 @@ h2 {
   gap: 1rem;
 }
 
+h3 {
+  text-align: center;
+  color: var(--dark-primary-color);
+  font-size: 1.5rem;
+  margin: 1rem;
+  gap: 1rem;
+}
+
 /* ********************************
   *****    FOOTER   ***************
   ******************************** */
@@ -127,9 +136,213 @@ h2 {
     color: var(--background-color-opacidad-06); /* Cambia el color del enlace al pasar el ratón */
   }
 
+/* ***********************
+** nav y footer tablet ****
+************************** */
+@media screen and (max-width: 768px) {
+  /* Header */
+header {
+  position: relative; /* Cambia la posición a relativa */
+  flex-direction: column; /* Cambia el diseño a columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  padding: 1rem;
+}
+
+header .logo {
+  width: 80%; /* Ajusta el tamaño del logo */
+  margin-bottom: 1rem;
+}
+
+.abrir-menu {
+  display: block; /* Muestra el botón de hamburguesa */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2000; /* Encima del nav */
+  color: var(--secundary-color); /* Azul oscuro */
+}
+
+.cerrar-menu {
+  display: block; /* Muestra el botón de cerrar */
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2000; /* Encima del nav */
+  color: var(--secundary-color); /* Azul oscuro */
+}
+
+/* Nav */
+.nav {
+  position: fixed; /* Fija el nav en la pantalla */
+  top: 2rem;
+  left:   0; /* Alinea el nav al lado derecho */
+  width: 50%; /* Ocupa el 30% del ancho de la pantalla */
+  height: 100%; /* Ocupa toda la altura de la pantalla */
+  background-color: #ffffff; /* Fondo blanco */
+  opacity: 1; /* Oculto inicialmente */
+  visibility: hidden; /* Oculto inicialmente */
+  z-index: 1000; /* Se coloca encima de todo */
+  display: flex;
+  flex-direction: column; /* Los enlaces se apilan verticalmente */
+  align-items:left; /* Centra los enlaces horizontalmente */
+  justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
+  gap: 0.8rem; /* Espaciado entre los enlaces */
+  padding: 2rem 1rem; /* Espaciado interno */
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  transform: translateX(100%); /* Oculta el nav fuera de la pantalla inicialmente */
+  transition: transform 0.3s ease; /* Transición suave al abrir/cerrar */
+}
+
+.nav.visible {
+  
+  transform: translateX(6); /* Muestra el nav */
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000; /* Se coloca encima de todo */
+  background-color: #ffffff; /* Fondo blanco */ 
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  padding: 2rem 1rem; /* Espaciado interno */
+
+}
+
+.nav-list {
+  flex-direction: column; /* Los enlaces se apilan verticalmente */
+  gap: 1rem; /* Espaciado entre los enlaces */
+  /*align-items: center; /* Centra los enlaces horizontalmente */
+  justify-content: center; /* Centra los enlaces verticalmente */
+  background-color: white;
+}
+
+.nav-list li a {
+  font-size: 1rem; /* Tamaño del texto */
+  color: var(--text-buttons); /* Texto en azul oscuro */
+  background-color: var(--accent-color-buttons); /* Fondo transparente */
+  padding: 0.8rem 1.5rem; /* Espaciado interno para que parezca un botón */
+  border-radius: 10px; /* Bordes redondeados */
+  text-align: center; /* Centra el texto */
+  border: 2px solid var(--secundary-color); /* Borde azul oscuro */
+  display: inline-block; /* Asegura que el enlace se comporte como un botón */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  margin-top: 1rem; 
+  margin-bottom: 1.5rem; 
+}
+
+
+
+/* Footer */
+footer {
+  padding: 1rem;
+  font-size: 0.9rem; /* Reduce el tamaño del texto */
+}
+}
+
+/* ***********************
+** nav y footer movil ****
+************************** */
+@media screen and (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 0.5rem;
+  }
+
+  header .logo {
+    width: 90%; /* Reduce aún más el tamaño del logo */
+  }
+
+  .abrir-menu {
+    display: block; /* Muestra el botón de hamburguesa */
+    position: absolute;
+    top:1rem; /* Baja aún más el botón de hamburguesa en móviles */
+    right: 1rem; /* Mantiene el botón a la derecha */
+    font-size: 4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* Encima del nav */
+  }
+
+  .cerrar-menu {
+    display: block; /* Muestra el botón de cerrar */
+    position: absolute;
+    top: 1rem; /* Baja el botón de cierre */
+    left: 1rem; /* Mantiene el botón a la izquierda */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* Encima del nav */
+  }
+
+  /* Nav */
+  .nav {
+    position: fixed; /* Fija el nav en la pantalla */
+    top: 0;
+    left: 0; /* Asegura que el nav comience desde el borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    background-color: #ffffff; /* Fondo blanco */
+    opacity: 1; /* Asegura que sea visible */
+    visibility: visible; /* Asegura que sea visible */
+    z-index: 1000; /* Se coloca encima de todo */
+    display: flex;
+    flex-direction: column; /* Los enlaces se apilan verticalmente */
+    align-items: center; /* Centra los enlaces horizontalmente */
+    justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
+    gap: 1rem; /* Espaciado entre los enlaces */
+    padding: 2rem 1rem; /* Espaciado interno */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  }
+
+  .nav.visible {
+    transform: translateX(0); /* Asegura que el nav esté completamente visible */
+    opacity: 1;
+    visibility: visible;
+   
+  }
+
+  .nav-list {
+    flex-direction: column; /* Los enlaces se apilan verticalmente */
+    gap: 1.5rem; /* Espaciado entre los enlaces */
+    background-color: white;
+  }
+
+  .nav-list li a {
+
+    font-size: 0.9rem; /* Ajusta el tamaño del texto */
+    color: var(--text-buttons); /* Texto en azul oscuro */
+    background-color: var(--accent-color-buttons);
+    padding: 0.8rem 1.5rem; /* Espaciado interno para que parezca un botón */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto */
+    border: 2px solid var(--secundary-color); /* Borde azul oscuro */
+    display: inline-block; /* Asegura que el enlace se comporte como un botón */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  }
+
+ 
+
+  /* Footer */
+  footer {
+    font-size: 0.8rem; /* Reduce el tamaño del texto */
+    text-align: center;
+  }
+}
+
+
+
+
  /* *************************
   ******    INICIO   ********
   *************************** */
+  
   .inicio {
   position: relative;
   text-align: center;
@@ -174,251 +387,9 @@ h2 {
   color: var(--text-buttons);
 }
 
-
-
-/*  ******************
-** inicio tablet ****
-********************** */
-@media screen and (max-width: 768px) {
-  /* Header */
-header {
-  position: relative; /* Cambia la posición a relativa */
-  flex-direction: column; /* Cambia el diseño a columna */
-  align-items: center; /* Centra los elementos horizontalmente */
-  padding: 1rem;
-}
-
-header .logo {
-  width: 80%; /* Ajusta el tamaño del logo */
-  margin-bottom: 1rem;
-}
-
-.abrir-menu {
-  display: block; /* Muestra el botón de hamburguesa */
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2000; /* Encima del nav */
-  color: var(--secundary-color); /* Azul oscuro */
-}
-
-.cerrar-menu {
-  display: block; /* Muestra el botón de cerrar */
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2000; /* Encima del nav */
-  color: var(--secundary-color); /* Azul oscuro */
-}
-
-/* Nav */
-.nav {
-  position: fixed; /* Fija el nav en la pantalla */
-  top: 0;
-  right: 0; /* Alinea el nav al lado derecho */
-  width: 40%; /* Ocupa el 30% del ancho de la pantalla */
-  height: 100%; /* Ocupa toda la altura de la pantalla */
-  background-color: #ffffff; /* Fondo blanco */
-  opacity: 0; /* Oculto inicialmente */
-  visibility: hidden; /* Oculto inicialmente */
-  z-index: 1000; /* Se coloca encima de todo */
-  display: flex;
-  flex-direction: column; /* Los enlaces se apilan verticalmente */
-  align-items:left; /* Centra los enlaces horizontalmente */
-  justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
-  gap: 0.8rem; /* Espaciado entre los enlaces */
-  padding: 2rem 1rem; /* Espaciado interno */
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  transform: translateX(100%); /* Oculta el nav fuera de la pantalla inicialmente */
-  transition: transform 0.3s ease; /* Transición suave al abrir/cerrar */
-}
-
-.nav.visible {
-  transform: translateX(0); /* Muestra el nav */
-  opacity: 1;
-  visibility: visible;
-  background-color: white;
-}
-
-.nav-list {
-  flex-direction: column; /* Los enlaces se apilan verticalmente */
-  gap: 1rem; /* Espaciado entre los enlaces */
-  /*align-items: center; /* Centra los enlaces horizontalmente */
-  justify-content: center; /* Centra los enlaces verticalmente */
-}
-
-.nav-list li a {
-  font-size: 1rem; /* Tamaño del texto */
-  color: var(--secundary-color); /* Texto en azul oscuro */
-  background-color: transparent; /* Fondo transparente */
-  padding: 0.8rem 1.5rem; /* Espaciado interno para que parezca un botón */
-  border-radius: 10px; /* Bordes redondeados */
-  text-align: center; /* Centra el texto */
-  border: 2px solid var(--secundary-color); /* Borde azul oscuro */
-  display: inline-block; /* Asegura que el enlace se comporte como un botón */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
-  margin-top: 1rem; 
-  margin-bottom: 1.5rem; 
-}
-
-/* Sección Principal */
-.inicio {
-  padding: 1rem;
-  text-align: center;
-}
-.inicio h1 {
-  visibility: hidden; /* Hace que el elemento sea invisible */
-}
-.inicio img {
-  width: 100%; /* La imagen ocupa todo el ancho disponible */
-  height: auto; /* Mantiene la proporción */
-  margin-bottom: 1rem;
-}
-
-.inicio p {
-  font-size: 1rem; /* Ajusta el tamaño del texto */
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-/* Footer */
-footer {
-  padding: 1rem;
-  font-size: 0.9rem; /* Reduce el tamaño del texto */
-}
-}
-
-/* *******************
-** inicio movil ****
-********************** */
-@media screen and (max-width: 480px) {
-  /* Header */
-  header {
-    padding: 0.5rem;
-  }
-
-  header .logo {
-    width: 90%; /* Reduce aún más el tamaño del logo */
-  }
-
-  .abrir-menu {
-    display: block; /* Muestra el botón de hamburguesa */
-    position: absolute;
-    top:2rem; /* Baja aún más el botón de hamburguesa en móviles */
-    right: 1rem; /* Mantiene el botón a la derecha */
-    font-size: 4rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1100; /* Encima del nav */
-  }
-
-  .cerrar-menu {
-    display: block; /* Muestra el botón de cerrar */
-    position: absolute;
-    top: 2.5rem; /* Baja el botón de cierre */
-    left: 1rem; /* Mantiene el botón a la izquierda */
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1100; /* Encima del nav */
-  }
-
-  /* Nav */
-  .nav {
-    position: fixed; /* Fija el nav en la pantalla */
-    top: 0;
-    left: 0; /* Asegura que el nav comience desde el borde izquierdo */
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    height: 100%; /* Ocupa toda la altura de la pantalla */
-    background-color: #ffffff; /* Fondo blanco */
-    opacity: 1; /* Asegura que sea visible */
-    visibility: visible; /* Asegura que sea visible */
-    z-index: 1000; /* Se coloca encima de todo */
-    display: flex;
-    flex-direction: column; /* Los enlaces se apilan verticalmente */
-    align-items: center; /* Centra los enlaces horizontalmente */
-    justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
-    gap: 1rem; /* Espaciado entre los enlaces */
-    padding: 2rem 1rem; /* Espaciado interno */
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  }
-
-  .nav.visible {
-    transform: translateX(0); /* Asegura que el nav esté completamente visible */
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-list {
-    flex-direction: column; /* Los enlaces se apilan verticalmente */
-    gap: 1.5rem; /* Espaciado entre los enlaces */
-  }
-
-  .nav-list li a {
-    font-size: 1rem; /* Ajusta el tamaño del texto */
-    color: var(--secundary-color); /* Texto en azul oscuro */
-    background-color: transparent; /* Fondo transparente */
-    padding: 0.8rem 1.5rem; /* Espaciado interno para que parezca un botón */
-    border-radius: 10px; /* Bordes redondeados */
-    text-align: center; /* Centra el texto */
-    border: 2px solid var(--secundary-color); /* Borde azul oscuro */
-    display: inline-block; /* Asegura que el enlace se comporte como un botón */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
-  }
-
-  /* Sección principal */
-  .inicio h1 {
-visibility: hidden;
-
-  }
-
-  .inicio p {
-    font-size: 0.9rem; /* Reduce el tamaño del texto */
-  }
-
-  /* Footer */
-  footer {
-    font-size: 0.8rem; /* Reduce el tamaño del texto */
-    text-align: center;
-  }
-}
-
-/* *****************************
-  ******  LA  FINCA  **********
-  ******************************* */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el ancho total */
-  }
-  
-  html, body {
-    width: 100%; /* Asegura que el cuerpo y el HTML ocupen todo el ancho */
-    overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
-  }
-  
-  main {
-    display: grid;
-    grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
-    grid-template-rows: auto; /* Filas automáticas */
-    gap: 0; /* Elimina cualquier espacio entre las filas o columnas */
-    margin: 0; /* Elimina márgenes externos */
-    padding: 0; /* Elimina paddings internos */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-  }
- 
- 
- 
+*****************************
+  /******  LA  FINCA   ***
+  *****************************/
   main {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -447,6 +418,7 @@ section h3 {
 }
 
 .contenido img {
+  max-width: 400px; /* Limita el tamaño máximo de la imagen */
   width: 50%; /* La imagen ocupa la mitad del ancho */
   height: auto; /* Mantiene la proporción de la imagen */
   border-radius: 10px; /* Borde redondeado */
@@ -455,7 +427,7 @@ section h3 {
 .contenido img:last-child {
   width: 30%;
   height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 10;
+  border-radius: 10px;
 }
 .contenido p {
   width: 50%; /* El texto ocupa la otra mitad del ancho */
@@ -480,18 +452,30 @@ section h3 {
   max-width: 1800px; /* Limita el ancho máximo del contenedor */
 }
 
+.video iframe{
+  width: 70%; /* El video ocupa la mitad del ancho */
+  height: auto; /* Mantiene la proporción del video */
+  border-radius: 10px; /* Borde redondeado */
+  margin: 0; /* Elimina márgenes adicionales */
+}
+
 .video p {
-  width: 40%; /* El párrafo ocupa la otra mitad del ancho */
+  width:30%; /* El párrafo ocupa la otra mitad del ancho */
   text-align: justify; /* Justifica el texto */
   font-size: 1rem; /* Tamaño del texto */
   line-height: 1.5; /* Espaciado entre líneas */
   margin: 0; /* Elimina márgenes adicionales */
 }
 
-/****************************
-***** La finca tablet ****
-****************************/
+
+/****** finca tablet  *****/
 @media screen and (max-width: 768px) {
+  margin: 0; /* Elimina márgenes externos */
+  padding: 1rem; /* Espaciado interno reducido */
+  flex-direction: column; /* Cambia la dirección a columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 1rem; /* Espacio entre los elementos */
+  
   main {
     display: grid;
     grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
@@ -506,11 +490,50 @@ section h3 {
   .video {
     border-radius: 0; /* Elimina el borde redondeado */
 }
+ 
+  .contenido {
+    display: flex;
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+    gap: 1rem; /* Espaciado entre los elementos */
+    padding: 1rem 0; /* Espaciado interno arriba y abajo */
+    margin: 0; /* Elimina márgenes externos */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    max-width: 100%; /* Asegura que no exceda el ancho */
+    border-radius: 0;
+    background-color: transparent;
+  }
+  .video {
+    display: flex;
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+    gap: 1rem; /* Espaciado entre los elementos */
+    padding: 1rem 0; /* Espaciado interno arriba y abajo */
+    margin: 0; /* Elimina márgenes externos */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    max-width: 100%; /* Asegura que no exceda el ancho */
+    border-radius: 0;
+    background-color: transparent;
+  }
 
-/**********************
-***  La finca movil  ****
-************************/
-@media screen and (max-width: 480px) {@media screen and (max-width: 480px) {
+  .contenido img,
+  .video img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .contenido p,
+  .video p {
+    width: 90%; /* El texto ocupa el 90% del ancho */
+    text-align: justify; /* Justifica el texto */
+    color: var(--text-icons); /* Color del texto */
+  }
+}
+
+/*********finca movil ***********/
+@media screen and (max-width: 480px) {
 
 
   .contenido,
@@ -552,16 +575,14 @@ section h3 {
     width: 100%; /* El video ocupa todo el ancho disponible */
     height: auto; /* Mantiene la proporción */
   }
+  
 }
 
 
 
-
-*******************************
-  ******
-  PRODUCTOS
-  ***
-  ******************************
+  ****************************
+  /******   PRODUCTOS    ***
+  ******************************/
   .producto {
   display: flex;
   justify-content: space-around;
@@ -611,6 +632,91 @@ section h3 {
 }
 
 
+
+
+
+/***************************
+  ******   LOCALIZACIÓN   ***
+  ***************************/
+  .mapa,
+.direcion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.direcion p {
+  display: inline;
+}
+
+.contenedor-localizacion {
+  display: flex; /* Activa Flexbox */
+  align-items: flex-start; /* Alinea elementos en la parte superior (opcional) */
+  justify-content: space-between; /* Espacia los elementos a lo largo del contenedor */
+  gap: 20px; /* Espacio entre los elementos */
+  margin: 20px; /* Espaciado general */
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 5rem;
+}
+
+.texto {
+  flex: 1; /* Ocupa todo el espacio que pueda */
+}
+.texto h3 {
+  text-align: left;
+  color: #689f38;
+  font-size: 1.5rem;
+}
+.mapa {
+  flex: 1; /* Ocupa la misma proporción que el texto */
+  max-width: 900px; /* Tamaño máximo del mapa */
+}
+
+.bi {
+  color: #689f38; /* Cambia el color de los iconos */
+  margin-right: 10px; /* Añade espacio entre el icono y el texto */
+  font-size: 1.2rem; /* Ajusta el tamaño de los iconos */
+}
+
+
+/****** Estilos responsive para tablet y móvil ******/
+@media screen and (max-width: 768px) {
+  .contenedor-localizacion {
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .contenedor-localizacion .texto,
+  .contenedor-localizacion .mapa {
+    flex: 1 1 100%; /* Cada elemento ocupa el 100% del ancho */
+    padding: 1rem 0; /* Espaciado interno arriba y abajo */
+  }
+
+  .contenedor-localizacion .mapa {
+    height: 300px; /* Reduce la altura del mapa en pantallas pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+    h2{
+    font-size: 1.5rem; /* Reduce el tamaño del texto */
+    margin: 0.3rem; /* Reduce el margen */
+  }
+  .direccion h3,
+  .horario h3{
+    font-size: 1.2rem; /* Reduce el tamaño del texto */
+    margin: 0.3rem; /* Reduce el margen */
+    color: var(--primary-color);
+  }
+  .contenedor-localizacion .mapa {
+    height: 250px; /* Reduce aún más la altura del mapa en móviles */
+  }
+}
+
+
+
 /* *****************************
   ******   CONTACTO    ****
   ***************************** */
@@ -639,7 +745,6 @@ section h3 {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 2fr; /* Dos columnas */
@@ -794,49 +899,103 @@ textarea.input {
   width: 50%;
 }
 
-***************************
-  ******
-  LOCALIZACIÓN
-  ***
-  ***************************
-  .mapa,
-.direcion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem;
-}
-.direcion p {
-  display: inline;
+/* Contacto tablet */
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 2rem; /* Reduce el tamaño del texto */
+    margin: 0.5rem; /* Reduce el margen */
+  }
+  h3 {
+    font-size: 1.5rem; /* Reduce el tamaño del texto */
+    margin: 0.5rem; /* Reduce el margen */
+    color: var(--text-icons);
+  }
+
+  .contenedor-formulario {
+    padding: 1rem; /* Reduce el espaciado interno */
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    background-color: transparent;
+  }
+
+  .forma {
+    width: 90%; /* Ocupa el 90% del ancho disponible */
+    max-width: 600px; /* Limita el ancho máximo */
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    padding: 1.5rem; /* Reduce el espaciado interno */
+    background-color: transparent;
+  }
+
+  .forma-contacto {
+    grid-column: 1; /* Asegura que ocupe toda la fila */
+    padding: 0.5rem; /* Reduce el espaciado interno */
+    text-align: center; /* Centra el texto */
+  }
+  .forma-contacto p:last-child {
+    font-size: 1rem; /* Reduce el tamaño del texto */
+    line-height: 1.4; /* Espaciado entre líneas */
+    color: var(--text-icons); /* Color del texto */
+  }
+  .input-container {
+    margin: 0.5rem 0; /* Reduce el margen entre los campos */
+  }
+  
+  .input-container span {
+    background-color: #ffffff; /* Cambia el fondo a blanco */
+    color: var(--text-icons); /* Asegura que el texto sea visible */
+  }
+  .btn {
+    width: 100%; /* Botón ocupa todo el ancho */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+  }
 }
 
-.contenedor-localizacion {
-  display: flex; /* Activa Flexbox */
-  align-items: flex-start; /* Alinea elementos en la parte superior (opcional) */
-  justify-content: space-between; /* Espacia los elementos a lo largo del contenedor */
-  gap: 20px; /* Espacio entre los elementos */
-  margin: 20px; /* Espaciado general */
-  margin-left: 10rem;
-  margin-right: 10rem;
-  margin-bottom: 5rem;
+/* Contacto movil */
+@media screen and (max-width: 480px) {
+  h2{
+    font-size: 1.5rem; /* Reduce el tamaño del texto */
+    margin: 0.5rem; /* Reduce el margen */
+  }
+  h3{
+    font-size: 1.2rem; /* Reduce el tamaño del texto */
+    margin: 0.5rem; /* Reduce el margen */
+    color: var(--text-icons);
+  }
+  .contenedor-formulario {
+    padding: 0.5rem; /* Reduce aún más el espaciado interno */
+    background-color: transparent;
+  }
+
+  .forma {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 1rem; /* Reduce el espaciado interno */
+    background-color: transparent;
+  }
+
+  .forma-contacto {
+    padding: 0.5rem; /* Reduce el espaciado interno */
+    font-size: 0.8rem; /* Reduce el tamaño del texto */
+  }
+  .forma-contacto p {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    line-height: 1.4; /* Espaciado entre líneas */
+    color: var(--text-icons); /* Color del texto */
+  }
+
+  .input-container {
+    margin: 1rem 0; /* Reduce el margen entre los campos */
+    
+  }
+  .input-container span {
+    background-color: #ffffff; /* Cambia el fondo a blanco */
+    color: var(--text-icons); /* Asegura que el texto sea visible */
+  }
+  
+  .btn {
+    font-size: 1rem; /* Reduce el tamaño del texto */
+    padding: 0.5rem 1rem; /* Ajusta el espaciado interno */
+   
+  }
 }
 
-.texto {
-  flex: 1; /* Ocupa todo el espacio que pueda */
-}
-.texto h3 {
-  text-align: left;
-  color: #689f38;
-  font-size: 1.5rem;
-}
-.mapa {
-  flex: 1; /* Ocupa la misma proporción que el texto */
-  max-width: 900px; /* Tamaño máximo del mapa */
-}
 
-.bi {
-  color: #689f38; /* Cambia el color de los iconos */
-  margin-right: 10px; /* Añade espacio entre el icono y el texto */
-  font-size: 1.2rem; /* Ajusta el tamaño de los iconos */
-}
