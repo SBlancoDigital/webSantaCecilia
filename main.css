@@ -396,6 +396,29 @@ visibility: hidden;
 /* *****************************
   ******  LA  FINCA  **********
   ******************************* */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el ancho total */
+  }
+  
+  html, body {
+    width: 100%; /* Asegura que el cuerpo y el HTML ocupen todo el ancho */
+    overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
+    grid-template-rows: auto; /* Filas automáticas */
+    gap: 0; /* Elimina cualquier espacio entre las filas o columnas */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0; /* Elimina paddings internos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+ 
+ 
+ 
   main {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -488,26 +511,7 @@ section h3 {
 ***  La finca movil  ****
 ************************/
 @media screen and (max-width: 480px) {@media screen and (max-width: 480px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el ancho total */
-  }
-  
-  html, body {
-    width: 100%; /* Asegura que el cuerpo y el HTML ocupen todo el ancho */
-    overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
-  }
-  
-  main {
-    display: grid;
-    grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
-    grid-template-rows: auto; /* Filas automáticas */
-    gap: 0; /* Elimina cualquier espacio entre las filas o columnas */
-    margin: 0; /* Elimina márgenes externos */
-    padding: 0; /* Elimina paddings internos */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-  }
+
 
   .contenido,
   .video {
