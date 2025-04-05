@@ -182,6 +182,7 @@ h2 {
 @media screen and (max-width: 768px) {
   /* Header */
 header {
+  position: relative; /* Cambia la posición a relativa */
   flex-direction: column; /* Cambia el diseño a columna */
   align-items: center; /* Centra los elementos horizontalmente */
   padding: 1rem;
@@ -201,7 +202,8 @@ header .logo {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1100; /* Encima del nav */
+  z-index: 2000; /* Encima del nav */
+  color: var(--secundary-color); /* Azul oscuro */
 }
 
 .cerrar-menu {
@@ -213,7 +215,8 @@ header .logo {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1100; /* Encima del nav */
+  z-index: 2000; /* Encima del nav */
+  color: var(--secundary-color); /* Azul oscuro */
 }
 
 /* Nav */
@@ -221,7 +224,7 @@ header .logo {
   position: fixed; /* Fija el nav en la pantalla */
   top: 0;
   right: 0; /* Alinea el nav al lado derecho */
-  width: 30%; /* Ocupa el 30% del ancho de la pantalla */
+  width: 40%; /* Ocupa el 30% del ancho de la pantalla */
   height: 100%; /* Ocupa toda la altura de la pantalla */
   background-color: #ffffff; /* Fondo blanco */
   opacity: 0; /* Oculto inicialmente */
@@ -229,9 +232,9 @@ header .logo {
   z-index: 1000; /* Se coloca encima de todo */
   display: flex;
   flex-direction: column; /* Los enlaces se apilan verticalmente */
-  align-items: center; /* Centra los enlaces horizontalmente */
+  align-items:left; /* Centra los enlaces horizontalmente */
   justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
-  gap: 1rem; /* Espaciado entre los enlaces */
+  gap: 0.8rem; /* Espaciado entre los enlaces */
   padding: 2rem 1rem; /* Espaciado interno */
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
   transform: translateX(100%); /* Oculta el nav fuera de la pantalla inicialmente */
@@ -242,20 +245,28 @@ header .logo {
   transform: translateX(0); /* Muestra el nav */
   opacity: 1;
   visibility: visible;
+  background-color: white;
 }
 
 .nav-list {
   flex-direction: column; /* Los enlaces se apilan verticalmente */
   gap: 1rem; /* Espaciado entre los enlaces */
+  /*align-items: center; /* Centra los enlaces horizontalmente */
+  justify-content: center; /* Centra los enlaces verticalmente */
 }
 
 .nav-list li a {
-  font-size: 1.2rem; /* Ajusta el tamaño del texto */
-  color: var(--text-icons); /* Texto oscuro */
+  font-size: 1rem; /* Tamaño del texto */
+  color: var(--secundary-color); /* Texto en azul oscuro */
   background-color: transparent; /* Fondo transparente */
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-align: center;
+  padding: 0.8rem 1.5rem; /* Espaciado interno para que parezca un botón */
+  border-radius: 10px; /* Bordes redondeados */
+  text-align: center; /* Centra el texto */
+  border: 2px solid var(--secundary-color); /* Borde azul oscuro */
+  display: inline-block; /* Asegura que el enlace se comporte como un botón */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  margin-top: 1rem; 
+  margin-bottom: 1.5rem; 
 }
 
 /* Sección Principal */
@@ -285,7 +296,7 @@ footer {
 }
 }
 
-/*  ******************
+/* *******************
 ** inicio movil ****
 ********************** */
 @media screen and (max-width: 480px) {
@@ -298,9 +309,71 @@ footer {
     width: 90%; /* Reduce aún más el tamaño del logo */
   }
 
+  .abrir-menu {
+    display: block; /* Muestra el botón de hamburguesa */
+    position: absolute;
+    top:2rem; /* Baja aún más el botón de hamburguesa en móviles */
+    right: 1rem; /* Mantiene el botón a la derecha */
+    font-size: 4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* Encima del nav */
+  }
+
+  .cerrar-menu {
+    display: block; /* Muestra el botón de cerrar */
+    position: absolute;
+    top: 2.5rem; /* Baja el botón de cierre */
+    left: 1rem; /* Mantiene el botón a la izquierda */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* Encima del nav */
+  }
+
+  /* Nav */
+  .nav {
+    position: fixed; /* Fija el nav en la pantalla */
+    top: 0;
+    left: 0; /* Asegura que el nav comience desde el borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    background-color: #ffffff; /* Fondo blanco */
+    opacity: 1; /* Asegura que sea visible */
+    visibility: visible; /* Asegura que sea visible */
+    z-index: 1000; /* Se coloca encima de todo */
+    display: flex;
+    flex-direction: column; /* Los enlaces se apilan verticalmente */
+    align-items: center; /* Centra los enlaces horizontalmente */
+    justify-content: flex-start; /* Alinea los enlaces al inicio verticalmente */
+    gap: 1rem; /* Espaciado entre los enlaces */
+    padding: 2rem 1rem; /* Espaciado interno */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  }
+
+  .nav.visible {
+    transform: translateX(0); /* Asegura que el nav esté completamente visible */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column; /* Los enlaces se apilan verticalmente */
+    gap: 1.5rem; /* Espaciado entre los enlaces */
+  }
+
   .nav-list li a {
-    font-size: 0.9rem; /* Reduce el tamaño del texto */
-    padding: 0.5rem;
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    color: var(--secundary-color); /* Texto en azul oscuro */
+    background-color: transparent; /* Fondo transparente */
+    padding: 0.8rem 1.5rem; /* Espaciado interno para que parezca un botón */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto */
+    border: 2px solid var(--secundary-color); /* Borde azul oscuro */
+    display: inline-block; /* Asegura que el enlace se comporte como un botón */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
   }
 
   /* Sección principal */
@@ -320,12 +393,9 @@ visibility: hidden;
   }
 }
 
-*****************************
-  ******
-  LA
-  FINCA
-  ***
-  *****************************
+/* *****************************
+  ******  LA  FINCA  **********
+  ******************************* */
   main {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -395,6 +465,94 @@ section h3 {
   margin: 0; /* Elimina márgenes adicionales */
 }
 
+/****************************
+***** La finca tablet ****
+****************************/
+@media screen and (max-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
+    grid-template-rows: auto; /* Filas automáticas */
+    gap: 0; /* Elimina cualquier espacio entre las filas o columnas */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0; /* Elimina paddings internos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+
+  .contenido,
+  .video {
+    border-radius: 0; /* Elimina el borde redondeado */
+}
+
+/**********************
+***  La finca movil  ****
+************************/
+@media screen and (max-width: 480px) {@media screen and (max-width: 480px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el ancho total */
+  }
+  
+  html, body {
+    width: 100%; /* Asegura que el cuerpo y el HTML ocupen todo el ancho */
+    overflow-x: hidden; /* Elimina cualquier desplazamiento horizontal */
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
+    grid-template-rows: auto; /* Filas automáticas */
+    gap: 0; /* Elimina cualquier espacio entre las filas o columnas */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0; /* Elimina paddings internos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+
+  .contenido,
+  .video {
+    display: flex;
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: right; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+    gap: 1rem; /* Espaciado entre los elementos */
+    padding: 1rem 0; /* Espaciado interno arriba y abajo */
+    margin: 0; /* Elimina márgenes externos */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    max-width: 100%; /* Asegura que no exceda el ancho */
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .contenido img,
+  .video img {
+    width: 100%; /* La imagen ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 0; /* Elimina el borde redondeado */
+  }
+
+  .contenido p,
+  .video p {
+    width: 100%; /* El texto ocupa todo el ancho */
+    font-size: 0.9rem; /* Reduce ligeramente el tamaño del texto */
+    line-height: 1.5; /* Espaciado entre líneas */
+ 
+    color: var(--text-icons); /* Color del texto */
+    margin: 0; /* Elimina márgenes adicionales */
+    text-align: center; /* Centra el texto */
+    color: #000;
+
+  }
+
+  .video iframe {
+    width: 100%; /* El video ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+  }
+}
+
+
+
+
 *******************************
   ******
   PRODUCTOS
@@ -448,66 +606,6 @@ section h3 {
   color: var(--dark-primary-color); /* Color del texto */
 }
 
-/* ******************************
-   ****** REVISAR ******
-   ****************************** */
-
-  @media screen and (max-width: 768px) {
-  .abrir-menu,
-  .cerrar-menu {
-    display: block;
-    border: 0;
-    font-size: 1.5rem;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  .nav {
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #689f38;
-    padding: 2rem;
-    box-shadow: 0 0 0 100vmax rgba(189, 189, 189, 0.493);
-  }
-
-  .nav.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .nav-list li a {
-    color: #dcedc8;
-  }
-
-  .contenido {
-    flex-direction: column; /* Cambia la dirección de los elementos a columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    gap: 1rem; /* Espacio entre los elementos */
-  }
-
-  .contenido img {
-    width: 100%; /* La imagen ocupa todo el ancho disponible */
-    height: auto; /* Mantiene la proporción de la imagen */
-  }
-
-  .contenido p {
-    width: 90%; /* El texto ocupa el 90% del ancho */
-    text-align: justify; /* Justifica el texto */
-  }
-}
 
 /* *****************************
   ******   CONTACTO    ****
