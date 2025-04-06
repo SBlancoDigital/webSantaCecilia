@@ -387,13 +387,10 @@ footer {
   color: var(--text-buttons);
 }
 
-*****************************
-  /******  LA  FINCA   ***
+/***************************
+  ******  LA  FINCA   ***
   *****************************/
   main {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-template-rows: 1fr 1fr;
   background-color: var(--background-color-opacidad-06);
 }
 section h3 {
@@ -426,6 +423,7 @@ section h3 {
 
 .contenido img:last-child {
   width: 30%;
+  max-width: 200px; /* Limita el tamaño máximo de la imagen */
   height: auto; /* Mantiene la proporción de la imagen */
   border-radius: 10px;
 }
@@ -447,20 +445,20 @@ section h3 {
   padding: 2rem; /* Espaciado interno */
   gap: 2rem; /* Espacio entre el párrafo y el vídeo */
   color: white; /* Color del texto */
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 100px; /* Bordes redondeados */
   margin: 2rem auto; /* Espaciado externo y centra horizontalmente */
   max-width: 1800px; /* Limita el ancho máximo del contenedor */
 }
 
 .video iframe{
-  width: 70%; /* El video ocupa la mitad del ancho */
+  width: 40; /* El video ocupa la mitad del ancho */
   height: auto; /* Mantiene la proporción del video */
   border-radius: 10px; /* Borde redondeado */
   margin: 0; /* Elimina márgenes adicionales */
 }
 
 .video p {
-  width:30%; /* El párrafo ocupa la otra mitad del ancho */
+  width:60%; /* El párrafo ocupa la otra mitad del ancho */
   text-align: justify; /* Justifica el texto */
   font-size: 1rem; /* Tamaño del texto */
   line-height: 1.5; /* Espaciado entre líneas */
@@ -470,12 +468,12 @@ section h3 {
 
 /****** finca tablet  *****/
 @media screen and (max-width: 768px) {
+  *{
   margin: 0; /* Elimina márgenes externos */
-  padding: 1rem; /* Espaciado interno reducido */
   flex-direction: column; /* Cambia la dirección a columna */
   align-items: center; /* Centra los elementos horizontalmente */
   gap: 1rem; /* Espacio entre los elementos */
-  
+  }
   main {
     display: grid;
     grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
@@ -580,12 +578,12 @@ section h3 {
 
 
 
-  ****************************
-  /******   PRODUCTOS    ***
+  /****************************
+  ******   PRODUCTOS    ***
   ******************************/
+
   .producto {
-  display: flex;
-  justify-content: space-around;
+   justify-content: space-around;
   align-items: center;
   gap: 1rem;
   padding: 2rem;
@@ -607,7 +605,7 @@ section h3 {
   grid-template-columns: repeat(
     auto-fit,
     minmax(200px, 1fr)
-  ); /* Ajusta el número de columnas automáticamente */
+      ); /* Ajusta el número de columnas automáticamente */
   gap: 2rem; /* Espacio entre los elementos */
   padding: 2rem; /* Espaciado interno */
   justify-items: center; /* Centra los elementos horizontalmente */
@@ -619,7 +617,6 @@ section h3 {
 
 .grid-productos img {
   width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-
   max-width: 400px; /* Limita el tamaño máximo de las imágenes */
   height: auto; /* Mantiene la proporción de las imágenes */
   border-radius: 10px; /* Bordes redondeados */
@@ -632,8 +629,54 @@ section h3 {
 }
 
 
+@media screen and (max-width: 768px) {
+  .producto {
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+    gap: 1rem; /* Espacio entre los elementos */
+    padding: 1rem; /* Espaciado interno reducido */
+  }
 
+  .producto img {
+    width: 80%; /* La imagen ocupa el 80% del ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 25px;
+  }
 
+  .grid-productos {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Ajusta el número de columnas automáticamente */
+    padding: 1rem; /* Espaciado interno reducido */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .producto {
+    flex-direction: column; /* Cambia a diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+    gap: 1rem; /* Espacio entre los elementos */
+    padding: 1rem; /* Espaciado interno reducido */
+  }
+
+  .producto img {
+    width: 100%; /* La imagen ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 25px;
+  }
+
+  .grid-productos {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* Ajusta el número de columnas automáticamente */
+    padding: 1rem; /* Espaciado interno reducido */
+  }
+
+}
 
 /***************************
   ******   LOCALIZACIÓN   ***
@@ -798,7 +841,7 @@ label {
   font-weight: 500;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
-  border: 2px solid var(--accent-color-buttons); /* Borde con color de botones */
+  border: 2px solid var(--bakground-color); /* Borde de los botones */
   border-radius: 25px;
   transition: 0.3s;
 }
@@ -817,7 +860,7 @@ textarea.input {
   left: 15px;
   transform: translateY(-50%);
   padding: 0 0.4rem;
-  color: var(--dark-primary-color);
+  color: var(--bakground-color);
   font-size: 1.2rem;
   font-weight: 400;
   pointer-events: none;
@@ -874,7 +917,6 @@ textarea.input {
   opacity: 0.5;
   transition: 0.3s;
   height: 5px;
-  /*background-color: #ec1ca3; /* el color del fondo*/
   top: 50%;
   transform: translateY(-50%);
 }
