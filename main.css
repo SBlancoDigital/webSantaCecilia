@@ -70,10 +70,6 @@ body {
   transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el ratón */
 }
-#contraste:hover {
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el ratón */
-}
 
 /*** fin modo contraste*******/
 
