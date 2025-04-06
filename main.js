@@ -59,3 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+/***** modo contraste *******/
+document.addEventListener("DOMContentLoaded", () => {
+    const contrasteBtn = document.querySelector("#contraste"); // Selecciona el botón
+    const body = document.body; // Selecciona el body
+  
+    // Evento para alternar el modo contraste
+    contrasteBtn.addEventListener("click", () => {
+      body.classList.toggle("modo-contraste"); // Añade o quita la clase
+    });
+  });
+
